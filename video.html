@@ -6,24 +6,16 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   overflow: hidden;
   background: transparent;
 }
 
-.video-container {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
 video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: cover;
 
-  /* soft horizontal dissolve */
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
@@ -43,11 +35,9 @@ video {
 </head>
 <body>
 
-<div class="video-container">
-  <video autoplay muted loop playsinline>
-    <source src="Coffee test (3).mp4" type="video/mp4">
-  </video>
-</div>
+<video autoplay muted loop playsinline>
+  <source src="Coffee test (3).mp4" type="video/mp4">
+</video>
 
 </body>
 </html>
