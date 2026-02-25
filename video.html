@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
-<body style="margin:0;">
-<video autoplay muted loop playsinline 
-       style="width:100%; height:auto; display:block;">
-  <source src="Coffee test (3).mp4" type="video/mp4">
-</video>
+<head>
+<meta charset="UTF-8">
+<style>
+html, body {
+  margin: 0;
+  padding: 40px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.video-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="video-wrapper">
+  <video autoplay muted loop playsinline>
+    <source src="Coffee test (3).mp4" type="video/mp4">
+  </video>
+</div>
+
 </body>
 </html>
