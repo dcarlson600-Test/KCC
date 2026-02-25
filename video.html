@@ -5,19 +5,29 @@
 <style>
 html, body {
   margin: 0;
-  padding: 40px;
-  background: #ffffff;
+  padding: 60px;
   box-sizing: border-box;
+
+  /* Smooth espresso gradient */
+  background: linear-gradient(
+    135deg,
+    #2b1a12 0%,
+    #3a2419 40%,
+    #2f1d15 100%
+  );
 }
 
+/* Center container */
 .video-wrapper {
   max-width: 1200px;
   margin: auto;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.15),
-    0 8px 16px rgba(0, 0, 0, 0.08);
+
+  /* Professional layered shadow */
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.45),
+    0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 video {
