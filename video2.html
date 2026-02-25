@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  /* Soft horizontal dissolve */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop playsinline>
+  <source src="IceCream.MP4" type="video/mp4">
+</video>
+
+</body>
+</html>
