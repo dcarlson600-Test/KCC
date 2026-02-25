@@ -6,39 +6,41 @@
 html, body {
   margin: 0;
   padding: 0;
-
-  /* Light caramel tan gradient */
-  background: linear-gradient(
-    145deg,
-    #c9a27e 0%,
-    #b8895f 45%,
-    #a8744d 100%
-  );
+  background: transparent;
+  overflow: hidden;
 }
 
-/* Centered video container */
-.video-wrapper {
-  max-width: 1200px;
-  margin: 80px auto;
-  border-radius: 14px;
-  overflow: hidden;
-
-  /* Softer, premium shadow */
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.25),
-    0 8px 18px rgba(0, 0, 0, 0.15);
+.video-container {
+  width: 100%;
+  margin: 0 auto;
 }
 
 video {
   width: 100%;
   height: auto;
   display: block;
+
+  /* Edge dissolve effect */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
 }
 </style>
 </head>
 <body>
 
-<div class="video-wrapper">
+<div class="video-container">
   <video autoplay muted loop playsinline>
     <source src="Coffee test (3).mp4" type="video/mp4">
   </video>
