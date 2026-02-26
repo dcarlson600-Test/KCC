@@ -9,8 +9,8 @@
 body {
     margin: 0;
     font-family: 'Playfair Display', serif;
-    background: #F6F2EE;
-    color: #3E3A37;
+    background: linear-gradient(180deg, #7A4F58 0%, #5E3A42 100%);
+    color: #F3E8E6;
     overflow-x: hidden;
 }
 
@@ -21,12 +21,12 @@ body {
 }
 
 .logo-section {
-    background: linear-gradient(180deg, #F6F2EE 0%, #EFE7E3 100%);
+    background: transparent;
 }
 
 .logo {
     font-size: 3.8rem;
-    color: #C9A3A3;
+    color: #F6D6D9;
     margin: 0;
     letter-spacing: 1px;
 }
@@ -34,7 +34,7 @@ body {
 .subtext {
     letter-spacing: 4px;
     font-size: 1rem;
-    color: #777;
+    color: #E7C6CA;
     margin-top: 12px;
 }
 
@@ -42,9 +42,10 @@ body {
     max-width: 900px;
     margin: 80px auto;
     padding: 60px;
-    background: white;
+    background: #F6F2EE;
+    color: #3E3A37;
     border-radius: 16px;
-    box-shadow: 0 25px 70px rgba(0,0,0,0.05);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.15);
 }
 
 /* Slower Elegant Slide-Up Animation */
@@ -102,7 +103,6 @@ const appearOptions = {
 const appearOnScroll = new IntersectionObserver(function(entries, observer) {
     entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-
         entry.target.classList.add('active');
         observer.unobserve(entry.target);
     });
