@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background: #F6F2EE;
+    color: #3E3A37;
+}
+
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #F6F2EE 0%, #EFE7E3 100%);
+    text-align: center;
+}
+
+.logo-block h1 {
+    font-size: 3rem;
+    color: #C9A3A3;
+    margin: 0;
+}
+
+.logo-block p {
+    letter-spacing: 3px;
+    font-size: 1rem;
+    color: #777;
+}
+
+.content {
+    padding: 100px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* Slide-Up Animation */
+.fade-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.9s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
