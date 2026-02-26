@@ -9,25 +9,25 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     height: 100%;
+    overflow: hidden;
 }
 
 body {
     font-family: 'Playfair Display', serif;
-    background: linear-gradient(180deg, #7A4F58 0%, #5E3A42 100%);
+    background: linear-gradient(180deg, #5A343C 0%, #40262C 100%);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Floating Board */
+/* Clean floating board */
 .board {
-    width: 92%;
+    width: 88%;
     max-width: 1100px;
-    height: 75%;
-    background: linear-gradient(180deg, #86525C 0%, #6B424B 100%);
-    border-radius: 20px;
+    height: 70%;
+    background: #8C5C65; /* rose latte */
+    border-radius: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,23 +35,24 @@ body {
     padding: 40px;
     box-sizing: border-box;
 
-    /* TRUE exterior drop shadow */
-    box-shadow: 
-        0 40px 100px rgba(0,0,0,0.45),
-        0 10px 30px rgba(0,0,0,0.25);
+    /* refined shadow */
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.35),
+        0 5px 15px rgba(0,0,0,0.25);
 }
 
 /* Title */
 .title {
-    font-size: clamp(34px, 4vw, 60px);
-    color: #F6D6D9;
-    letter-spacing: 1px;
+    font-size: clamp(36px, 4vw, 64px);
+    color: #FBE6E8;
+    letter-spacing: 0.5px;
+    font-weight: 500;
     opacity: 0;
-    transform: translateY(15px);
-    animation: fadeUp 2s cubic-bezier(.22,.61,.36,1) forwards;
+    transform: translateY(10px);
+    animation: fadeUp 1.8s ease-out forwards;
 }
 
-/* Smooth fade */
+/* Smooth animation */
 @keyframes fadeUp {
     to {
         opacity: 1;
