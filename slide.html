@@ -9,7 +9,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
     overflow: hidden;
 }
 
@@ -19,9 +18,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
-/* Main container */
+/* Container */
 .wrapper {
     width: 100%;
     height: 100%;
@@ -34,7 +34,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Soft Edge Fade */
+/* Soft edge fade */
 .wrapper::after {
     content: "";
     position: absolute;
@@ -42,7 +42,7 @@ body {
     pointer-events: none;
     background: radial-gradient(
         ellipse at center,
-        rgba(0,0,0,0) 65%,
+        rgba(0,0,0,0) 70%,
         rgba(0,0,0,0.25) 100%
     );
 }
@@ -52,20 +52,17 @@ body {
     font-size: clamp(32px, 4vw, 56px);
     color: #F6D6D9;
     letter-spacing: 1px;
-}
-
-/* Elegant Fade-In */
-.fade-in {
     opacity: 0;
-    transform: translateY(15px);
-    transition:
-        opacity 2s ease-out,
-        transform 2s cubic-bezier(.22,.61,.36,1);
+    transform: translateY(20px);
+    animation: fadeUp 2.2s cubic-bezier(.22,.61,.36,1) forwards;
 }
 
-.fade-in.active {
-    opacity: 1;
-    transform: translateY(0);
+/* Animation */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
@@ -73,22 +70,8 @@ body {
 <body>
 
 <div class="wrapper">
-    <h1 class="title fade-in">Hold your next event here!</h1>
+    <h1 class="title">Hold your next event here!</h1>
 </div>
-
-<script>
-const element = document.querySelector('.fade-in');
-
-const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('active');
-        obs.unobserve(entry.target);
-    });
-}, { threshold: 0.5 });
-
-observer.observe(element);
-</script>
 
 </body>
 </html>
