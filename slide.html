@@ -15,45 +15,43 @@ html, body {
 
 body {
     font-family: 'Playfair Display', serif;
-    background: linear-gradient(180deg, #5A343C 0%, #40262C 100%);
+    background: #F3ECE8; /* soft neutral blush */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Clean floating board */
-.board {
-    width: 88%;
-    max-width: 1100px;
-    height: 70%;
-    background: #8C5C65; /* rose latte */
-    border-radius: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px;
-    box-sizing: border-box;
+/* Clean floating frame */
+.frame {
+    width: 85%;
+    max-width: 1000px;
+    padding: 80px 40px;
+    background: #FFFFFF;
+    border-radius: 28px;
 
-    /* refined shadow */
+    /* soft luxury shadow */
     box-shadow:
-        0 25px 60px rgba(0,0,0,0.35),
-        0 5px 15px rgba(0,0,0,0.25);
+        0 40px 80px rgba(0,0,0,0.08),
+        0 8px 20px rgba(0,0,0,0.05);
+
+    text-align: center;
 }
 
 /* Title */
 .title {
-    font-size: clamp(36px, 4vw, 64px);
-    color: #FBE6E8;
-    letter-spacing: 0.5px;
+    font-size: clamp(40px, 4.5vw, 72px);
+    color: #3A2C2F;
+    letter-spacing: 0.3px;
     font-weight: 500;
+    line-height: 1.2;
+
     opacity: 0;
-    transform: translateY(10px);
-    animation: fadeUp 1.8s ease-out forwards;
+    transform: translateY(20px);
+    animation: rise 1.6s ease-out forwards;
 }
 
-/* Smooth animation */
-@keyframes fadeUp {
+/* Elegant animation */
+@keyframes rise {
     to {
         opacity: 1;
         transform: translateY(0);
@@ -64,7 +62,7 @@ body {
 
 <body>
 
-<div class="board">
+<div class="frame">
     <h1 class="title">Hold your next event here!</h1>
 </div>
 
