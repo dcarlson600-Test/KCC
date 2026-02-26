@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kelly's Animated Section</title>
-
+<title>Kelly's Section</title>
 
 <style>
 html, body {
@@ -23,36 +22,36 @@ body {
     align-items: center;
 }
 
-/* Main container locked to viewport */
+/* Main container */
 .wrapper {
     width: 100%;
-    max-width: 1100px;
-    height: 100vh;
+    max-width: 1000px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
-    padding: 40px;
+    gap: 24px;
+    padding: 30px 40px;
     box-sizing: border-box;
     position: relative;
 }
 
-/* Edge Fade Overlay */
-.wrapper::before {
+/* Soft Edge Fade */
+.wrapper::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
     background: radial-gradient(
         ellipse at center,
-        rgba(0,0,0,0) 55%,
-        rgba(0,0,0,0.35) 100%
+        rgba(0,0,0,0) 65%,
+        rgba(0,0,0,0.25) 100%
     );
 }
 
 /* Logo */
 .logo {
-    font-size: 3rem;
+    font-size: clamp(28px, 3vw, 40px);
     color: #F6D6D9;
     margin: 0;
     text-align: center;
@@ -60,29 +59,30 @@ body {
 
 .subtext {
     letter-spacing: 3px;
-    font-size: 0.9rem;
+    font-size: clamp(12px, 1.2vw, 14px);
     color: #E7C6CA;
-    margin-top: 8px;
+    margin-top: 6px;
     text-align: center;
 }
 
-/* Cards scaled tighter */
+/* Cards */
 .card {
     background: #F6F2EE;
     color: #3E3A37;
-    border-radius: 14px;
-    padding: 30px 40px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    padding: 18px 24px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.15);
     text-align: center;
+    font-size: clamp(13px, 1.2vw, 15px);
 }
 
 /* Animation */
 .fade-up {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
     transition:
-        opacity 2s ease-out,
-        transform 2s cubic-bezier(.22,.61,.36,1);
+        opacity 1.6s ease-out,
+        transform 1.6s cubic-bezier(.22,.61,.36,1);
 }
 
 .fade-up.active {
@@ -102,24 +102,21 @@ body {
     </div>
 
     <div class="card fade-up">
-        <h2>Fresh Classics</h2>
-        <p>Elegant favorites served daily in a warm boutique atmosphere.</p>
+        Fresh classics served daily in a warm boutique atmosphere.
     </div>
 
     <div class="card fade-up">
-        <h2>Refined Feel</h2>
-        <p>Blush tones. Soft espresso warmth. Modern elegance.</p>
+        Refined blush tones. Soft espresso warmth. Modern elegance.
     </div>
 
     <div class="card fade-up">
-        <h2>Order Online</h2>
-        <p>Simple. Fresh. Ready when you are.</p>
+        Simple. Fresh. Ready when you are.
     </div>
 
 </div>
 
 <script>
-const faders = document.querySelectorAll('.fade-up');
+const elements = document.querySelectorAll('.fade-up');
 
 const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -129,8 +126,8 @@ const observer = new IntersectionObserver((entries, obs) => {
     });
 }, { threshold: 0.2 });
 
-faders.forEach((el, index) => {
-    el.style.transitionDelay = (index * 0.25) + "s";
+elements.forEach((el, index) => {
+    el.style.transitionDelay = (index * 0.2) + "s";
     observer.observe(el);
 });
 </script>
