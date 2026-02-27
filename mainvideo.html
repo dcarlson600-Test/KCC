@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+video {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop playsinline>
+  <source src="https://dcarlson600-test.github.io/KCC/KV.m4v" type="video/mp4">
+</video>
+
+</body>
+</html>
